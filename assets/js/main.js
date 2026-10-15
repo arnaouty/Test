@@ -3,9 +3,9 @@
    Leave a value empty ("") to hide that button / icon.
    ========================================================= */
 const CONTACT = {
-  whatsapp: "",   // international format, digits only, e.g. "201001234567"
-  phone: "",      // e.g. "+20 100 123 4567"
-  email: "",      // e.g. "hello@platform-agency.com"
+  whatsapp: "201116195666",   // international format, digits only
+  phone: "+20 111 619 5666",
+  email: "bassem@platform-advert.com",
   instagram: "",  // full URL
   facebook: "",   // full URL
   linkedin: "",   // full URL
