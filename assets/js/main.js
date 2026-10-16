@@ -124,4 +124,52 @@ document.querySelectorAll(".card").forEach((card) => {
   });
 });
 
+/* ---------- Software section: typing code window ---------- */
+(function codeTyper() {
+  const el = document.getElementById("codeTyper");
+  const status = document.getElementById("codeStatus");
+  if (!el) return;
+  const esc = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  // [text, css class] segments; "\n" breaks lines
+  const script = [
+    ["// Brief: \"Website + CRM for our brand\"\n", "c"],
+    ["const ", "k"], ["project", ""], [" = platform.", ""], ["build", "k"], ["({\n", ""],
+    ["  brand: ", ""], ["\"Your Company\"", "s"], [",\n", ""],
+    ["  website: ", ""], ["[", ""], ["\"home\", \"services\", \"shop\"", "s"], ["],\n", ""],
+    ["  system: ", ""], ["[", ""], ["\"CRM\", \"tasks\", \"dashboard\"", "s"], ["],\n", ""],
+    ["  ai: ", ""], ["[", ""], ["\"chatbot\", \"automation\"", "s"], ["],\n", ""],
+    ["  mobileReady: ", ""], ["true", "k"], [",\n", ""],
+    ["});\n\n", ""],
+    ["await ", "k"], ["project.", ""], ["launch", "k"], ["();\n", ""],
+    ["// ✓ Live and ready for your customers", "c"],
+  ];
+  const statuses = ["writing code…", "designing screens…", "testing…", "launched ✓"];
+  const full = script.map(([t, c]) => (c ? `<span class="${c}">${esc(t)}</span>` : esc(t))).join("");
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    el.innerHTML = full; status.textContent = statuses[3]; return;
+  }
+  const total = script.reduce((n, [t]) => n + t.length, 0);
+  let typed = 0, timer;
+  const render = () => {
+    let left = typed, html = "";
+    for (const [t, c] of script) {
+      if (left <= 0) break;
+      const part = esc(t.slice(0, left)); left -= t.length;
+      html += c ? `<span class="${c}">${part}</span>` : part;
+    }
+    el.innerHTML = html;
+    status.textContent = statuses[Math.min(3, Math.floor((typed / total) * 3))];
+  };
+  const tick = () => {
+    typed += 2;
+    render();
+    if (typed < total) timer = setTimeout(tick, 28);
+    else { status.textContent = statuses[3]; timer = setTimeout(() => { typed = 0; tick(); }, 4000); }
+  };
+  // start typing when the window scrolls into view
+  new IntersectionObserver((entries, obs) => {
+    if (entries[0].isIntersecting) { obs.disconnect(); tick(); }
+  }, { threshold: 0.3 }).observe(el.closest(".code-window"));
+})();
+
 document.getElementById("year").textContent = new Date().getFullYear();
