@@ -1,0 +1,24 @@
+{
+  "name": "My Restaurant",
+  "tagline": "Welcome! Scan, browse and pay from your table.",
+  "base_url": "https://arnaouty.github.io/Test/",
+  "tables": 10,
+
+  "menu": {
+    "url": "https://example.com/menu.pdf"
+  },
+
+  "location": {
+    "address": "123 Main Street, Cairo",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=30.0444,31.2357"
+  },
+
+  "payment_methods": [
+    { "name": "Cash", "note": "Pay your waiter or at the counter" },
+    { "name": "Visa / Mastercard", "note": "Ask for the card machine" },
+    { "name": "Apple Pay / Google Pay", "note": "Contactless at the table" },
+    { "name": "Pay online", "note": "Secure payment link", "url": "https://example.com/pay" }
+  ],
+
+  "phone": "+20 100 000 0000"
+}
