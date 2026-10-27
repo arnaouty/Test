@@ -11,7 +11,7 @@ index.html               – the whole one-page site
 assets/css/style.css     – all styling (colours are CSS variables at the top)
 assets/js/main.js        – contact details, client list, animations
 assets/img/logo.png      – full logo (transparent)
-assets/img/mark.png      – "P" icon
+assets/img/mark.svg      – "P" icon (vector)
 assets/img/clients/      – 30 client logos (white, transparent)
 ```
 
