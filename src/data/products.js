@@ -1,0 +1,155 @@
+// Product catalog. Replace with your own products (or load from a backend later).
+export const categories = [
+  { slug: "tops", title: "Tops", shape: "top" },
+  { slug: "chemises", title: "Chemises", shape: "shirt" },
+  { slug: "t-shirts", title: "T-shirts", shape: "tee" },
+  { slug: "sweatpants", title: "Sweatpants", shape: "pants" },
+];
+
+const C = {
+  black: { name: "Black", hex: "#1d1d1f" },
+  white: { name: "White", hex: "#f4f1ea" },
+  cream: { name: "Cream", hex: "#e9dcc3" },
+  beige: { name: "Beige", hex: "#cdb699" },
+  brown: { name: "Brown", hex: "#6b4a35" },
+  olive: { name: "Olive", hex: "#6f7350" },
+  sage: { name: "Sage", hex: "#a7b39a" },
+  navy: { name: "Navy", hex: "#22304a" },
+  sky: { name: "Sky", hex: "#9fbcd6" },
+  pink: { name: "Pink", hex: "#e8b7bf" },
+  burgundy: { name: "Burgundy", hex: "#6e2433" },
+  lilac: { name: "Lilac", hex: "#b9a7cf" },
+  grey: { name: "Heather Grey", hex: "#a5a6a8" },
+  charcoal: { name: "Charcoal", hex: "#45464a" },
+  blueStripe: { name: "Blue Stripe", hex: "#7f9cc4" },
+  greenStripe: { name: "Green Stripe", hex: "#8aa58a" },
+};
+
+const SIZES = ["XS", "S", "M", "L", "XL"];
+
+export const products = [
+  {
+    handle: "cotton-long-sleeve-top",
+    title: "Cotton Long Sleeve Top",
+    category: "tops",
+    price: 249,
+    colors: [C.black, C.white, C.cream, C.brown, C.navy, C.sage],
+    sizes: SIZES,
+    description:
+      "A soft, breathable cotton long sleeve with a close fit. Layers under everything or works on its own.",
+    details: ["95% cotton, 5% elastane", "Fitted silhouette", "Machine wash cold"],
+  },
+  {
+    handle: "linen-longline-chemise",
+    title: "Linen Longline Chemise",
+    category: "chemises",
+    price: 499,
+    colors: [C.white, C.beige, C.olive],
+    sizes: ["S/M", "L/XL"],
+    description: "An airy, longline linen shirt with a relaxed drape for warm days.",
+    details: ["100% linen", "Relaxed, longline fit", "Button front"],
+  },
+  {
+    handle: "lycra-long-sleeve-top",
+    title: "Lycra Long Sleeve Top",
+    category: "tops",
+    price: 249,
+    featured: true,
+    colors: [C.black, C.white, C.cream, C.beige, C.brown, C.olive, C.navy, C.sky, C.pink, C.burgundy, C.lilac],
+    sizes: SIZES,
+    description:
+      "Our best-selling second-skin long sleeve. Stretchy, smooth and opaque, in eleven shades.",
+    details: ["92% polyamide, 8% lycra", "Second-skin fit", "Machine wash cold"],
+  },
+  {
+    handle: "lycra-short-sleeve-top",
+    title: "Lycra Short Sleeve Top",
+    category: "t-shirts",
+    price: 249,
+    colors: [C.black, C.white, C.cream, C.brown, C.navy, C.pink, C.sage],
+    sizes: SIZES,
+    description: "The short-sleeve version of our fitted lycra top.",
+    details: ["92% polyamide, 8% lycra", "Fitted", "Machine wash cold"],
+  },
+  {
+    handle: "relaxed-striped-chemise",
+    title: "Relaxed Striped Chemise — One size",
+    category: "chemises",
+    price: 549,
+    soldOut: true,
+    colors: [C.blueStripe, C.greenStripe],
+    sizes: ["One size"],
+    description: "An oversized striped shirt cut to fit most sizes.",
+    details: ["100% cotton poplin", "Oversized fit", "One size fits XS–XL"],
+  },
+  {
+    handle: "relaxed-striped-shirt",
+    title: "Relaxed Striped Shirt — One size",
+    category: "chemises",
+    price: 649,
+    colors: [C.blueStripe, C.greenStripe, C.white, C.navy],
+    sizes: ["One size"],
+    description: "A crisp, relaxed shirt with a dropped shoulder.",
+    details: ["100% cotton", "Dropped shoulder", "One size fits XS–XL"],
+  },
+  {
+    handle: "boxy-t-shirt",
+    title: "Boxy T-Shirt",
+    category: "t-shirts",
+    price: 400,
+    compareAtPrice: 750,
+    colors: [C.white],
+    sizes: SIZES,
+    description: "A heavyweight cotton tee with a boxy, cropped cut.",
+    details: ["240gsm cotton", "Boxy fit", "Ribbed collar"],
+  },
+  {
+    handle: "boxy-t-shirt-black",
+    title: "Boxy T-Shirt — Black",
+    category: "t-shirts",
+    price: 400,
+    compareAtPrice: 750,
+    colors: [C.black],
+    sizes: SIZES,
+    description: "A heavyweight cotton tee with a boxy, cropped cut.",
+    details: ["240gsm cotton", "Boxy fit", "Ribbed collar"],
+  },
+  {
+    handle: "sweatpants-black",
+    title: "Sweatpants — Black",
+    category: "sweatpants",
+    price: 550,
+    colors: [C.black, C.charcoal],
+    sizes: SIZES,
+    description: "Brushed fleece sweatpants with an elastic waist and cuffed ankle.",
+    details: ["80% cotton, 20% polyester", "Elastic drawstring waist", "Side pockets"],
+  },
+  {
+    handle: "sweatpants-heather-grey",
+    title: "Sweatpants — Heather Grey",
+    category: "sweatpants",
+    price: 550,
+    colors: [C.grey, C.cream],
+    sizes: SIZES,
+    description: "Brushed fleece sweatpants with an elastic waist and cuffed ankle.",
+    details: ["80% cotton, 20% polyester", "Elastic drawstring waist", "Side pockets"],
+  },
+  {
+    handle: "wide-leg-sweatpants",
+    title: "Wide-leg Sweatpants",
+    category: "sweatpants",
+    price: 699,
+    compareAtPrice: 850,
+    soldOut: true,
+    colors: [C.grey, C.black],
+    sizes: SIZES,
+    description: "Relaxed, wide-leg fleece pants that pool slightly at the ankle.",
+    details: ["80% cotton, 20% polyester", "Wide leg", "Side pockets"],
+  },
+];
+
+export const getProduct = (handle) => products.find((p) => p.handle === handle);
+export const getCategory = (slug) => categories.find((c) => c.slug === slug);
+export const shapeFor = (product) => getCategory(product.category)?.shape ?? "top";
+export const productsIn = (slug) =>
+  slug === "all" ? products : products.filter((p) => p.category === slug);
